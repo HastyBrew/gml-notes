@@ -121,8 +121,8 @@ switch game_state {
 		if mouse_check_button_released(mb_left){
 
 			// Editor's note: if resizing room/sprites consider using
-			// point_in_rectangle(mouse_x,mouse_y,x,y,x+sprite_width,y+sprite_height) if origin top-right
-			// adjust for different origins
+			// point_in_rectangle(mouse_x,mouse_y,x,y,x+sprite_width,y+sprite_height) if origin top-left
+			// adjust for different origins e.g. x+(sprite_width/2) for center
 
 			if point_in_rectangle(mouse_x,mouse_y,100,400,500,550) {
 				chosen_answer = 1	
