@@ -119,6 +119,11 @@ switch game_state {
 		correct_answer = text_arr[level][5]
 		
 		if mouse_check_button_released(mb_left){
+
+			// Editor's note: if resizing room/sprites consider using
+			// point_in_rectangle(mouse_x,mouse_y,x,y,x+sprite_width,y+sprite_height) if origin top-right
+			// adjust for different origins
+
 			if point_in_rectangle(mouse_x,mouse_y,100,400,500,550) {
 				chosen_answer = 1	
 			}
