@@ -1,4 +1,4 @@
-# Typing Game
+# Typing Game Notes
 
 ## **ROOMS**
 
