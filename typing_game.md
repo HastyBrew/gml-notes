@@ -4,8 +4,8 @@
 
 **Size:** 1200x800
 
-- **Rm_Main
-- **Rm_Gameover
+- **Rm_Main**
+- **Rm_Gameover**
 
 ## **SPRITES**
 
