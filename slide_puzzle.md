@@ -145,40 +145,50 @@ shuffle_state = SHUFFLE_STATE.SET_SHUFFLE
 
 neighbor = noone
 
-function random_neighbor() {
+function random_neighbor(obj,px,py) {
 	
     var temp_arr = []
 
 	// LEFT
-    var n = instance_position(x - sprite_width, y, obj_slide_pic)
+    var n = instance_position(x - sprite_width, y, obj)
 	
-	if (n != noone) {
-		array_push(temp_arr, n)
+	if n != noone {
+		if n.x != px {
+			array_push(temp_arr, n)
+		}
 	}
 	
 	// RIGHT
-	n = instance_position(x + sprite_width, y, obj_slide_pic)
+	n = instance_position(x + sprite_width, y, obj)
 	
-	if (n != noone) {
-		array_push(temp_arr, n)
+	if n != noone {
+		if n.x != px {
+			array_push(temp_arr, n)
+		}
 	}
 	
 	// UP
-    n = instance_position(x, y-sprite_height, obj_slide_pic)
+    n = instance_position(x, y-sprite_height, obj)
 	
-	if (n != noone) {
-		array_push(temp_arr, n)
+	if n != noone {
+		if n.y != py {
+			array_push(temp_arr, n)
+		}
 	}
 	
 	// DOWN
-	n = instance_position(x, y+sprite_height, obj_slide_pic)
+	n = instance_position(x, y+sprite_height, obj)
 	
-	if (n != noone) {
-		array_push(temp_arr, n)
+	if n != noone {
+		if n.y != py {
+			array_push(temp_arr, n)
+		}
 	}
+	
+	n = instance_position(px, py, obj)
 
 	// ESC & RETURN
-    if (array_length(temp_arr) == 0) return noone
+    if (array_length(temp_arr) == 0) return n
 	
     return temp_arr[irandom(array_length(temp_arr) - 1)]
 }
@@ -194,7 +204,10 @@ switch(shuffle_state) {
 	
 		pic_slide_done = false
 	
-		neighbor = random_neighbor()
+		neighbor = random_neighbor(obj_slide_pic,prev_x,prev_y)
+
+		prev_x = x
+		prev_y = y
 		
 		neighbor.new_x = x
 		neighbor.new_y = y
