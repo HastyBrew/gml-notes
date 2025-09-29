@@ -14,7 +14,7 @@
 
 ## **ROOM**
 
-**Size:** 100x100
+**Size:** 1000x1000
 
  **Background color: Dark Burgundy**
 
