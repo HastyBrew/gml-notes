@@ -163,7 +163,6 @@ function random_neighbor(obj,px,py) {
     return temp_arr[irandom(array_length(temp_arr) - 1)]
 }
 
-image_angle = irandom(360)
 
 ```
 
