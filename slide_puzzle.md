@@ -394,7 +394,7 @@ switch(slide_state) {
 						global.correct_tiles ++	
 					}
 				}
-				show_debug_message(global.correct_tiles)
+
 				slide_state = SLIDE_STATE.SLIDING
 				
 				
