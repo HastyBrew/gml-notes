@@ -284,18 +284,21 @@ switch(convo_state) {
 		}
 		
 		if keyboard_check_released(ord("1")) {
+			var label = choices[chosen_choice]
 			chosen_choice = 0
-			new_label = convos.shopkeep[$ choices[chosen_choice]]
+			new_label = convos.shopkeep[$ label]
 			convo_state = CONVO_STATE.SETTING	
 		}
 		
 		if keyboard_check_released(ord("2")) and array_length(choices)>1 {
+			var label = choices[chosen_choice]
 			chosen_choice = 1
 			new_label = convos.shopkeep[$ choices[chosen_choice]]
 			convo_state = CONVO_STATE.SETTING	
 		}
 		
 		if keyboard_check_released(vk_enter) {
+			var label = choices[chosen_choice]
 			new_label = convos.shopkeep[$ choices[chosen_choice]]
 			convo_state = CONVO_STATE.SETTING
 		}
