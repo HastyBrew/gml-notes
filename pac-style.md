@@ -878,7 +878,11 @@ else {
 		image_alpha += 0.05	
 	}
 }
+```
 
+#### **Create**
+
+```gml
 Collision > obj_player
 
 if ghost_state != GHOST_STATE.BACK_TO_START {
@@ -889,8 +893,8 @@ if ghost_state != GHOST_STATE.BACK_TO_START {
 		ghost_state = GHOST_STATE.BACK_TO_START	
 	}
 }
-
 ```
+
 
 ### **obj_controller (again) **
 
