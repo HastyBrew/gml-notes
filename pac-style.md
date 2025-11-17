@@ -460,9 +460,9 @@ global.powerup_timer = global.powerup_timer_total
 instance_destroy(other)
 ```
 
-Drop in room, test with nodes
-Drop in the rest of the nodes
-Drop in pellets
+Drop in room, test with nodes<br />
+Drop in the rest of the nodes<br />
+Drop in pellets<br />
 
 ### **obj_gate**
 
