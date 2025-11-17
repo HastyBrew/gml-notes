@@ -883,7 +883,6 @@ else {
 #### **Collision > obj_player**
 
 ```gml
-Collision > obj_player
 
 if ghost_state != GHOST_STATE.BACK_TO_START {
 	if !global.powered_up {
