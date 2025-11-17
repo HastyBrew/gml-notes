@@ -880,7 +880,7 @@ else {
 }
 ```
 
-#### **Create**
+#### **Collision > obj_player**
 
 ```gml
 Collision > obj_player
