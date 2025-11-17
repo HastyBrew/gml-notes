@@ -895,7 +895,7 @@ if ghost_state != GHOST_STATE.BACK_TO_START {
 ```
 
 
-### **obj_controller (again) **
+### **obj_controller (again)**
 
 #### **Create**
 
