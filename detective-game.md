@@ -2491,7 +2491,7 @@ Drop it in Rm_End, and we're ready for testing!
 That's it! That should be the game! If you have any questions or ran into a bug you can reach out on Discord and I'll try to fix it as soon as I can. And if you need help either getting through this Speedrun Tutorial
 or with expanding the project, feel free to reach out on Discord for that too.<br /><br />
 So what now? You've got a nifty little game that was maybe more fun to make than it is to play, but that's the beauty of it! Now you can add your own story and customize it however you want. <br /><br />
-If you wanted to turn it into the Next Big Indie GameTM I would look into how previous games simply repeated a core mechanic instead of taking it into a new direction, and maybe combine it with a game from
+If you wanted to turn it into the Next Big Indie GameTM I would look into how previous games repeated their core mechanic instead of introducing variety, and maybe combine it with a game from
 an adjacent genre with a similar problem, like "Don't Feed the Monkeys" or "Curse of the Golden Idol", the latter shares a lot of mechanics with the Point and Click Speedrun Tutorial you can find on
 my YouTube and here.<br /><br />
 Thank you again to my Ko-Fi members for keeping me going, if you'd like to support my projects and the gamedev community please consider becoming a member! Thanks again!
