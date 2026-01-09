@@ -945,3 +945,16 @@ var title_length = string_width("Congratulations!")
 draw_text((room_width-title_length)/2,100,"Congratulations!")
 ```
 
+### arr_contains
+*Different function if array_contains isn't working, pop this in the Create Event before running the function.*
+
+```gml
+function arr_contains(arr,value) {
+	for (var i=0;i<array_length(arr);i++) {	
+		if arr[i] == value {
+			return true	
+		}		
+	}	
+	return false	
+}
+```
