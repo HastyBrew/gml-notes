@@ -616,7 +616,7 @@ if collision_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,obj_cursor,0,0)
 }
 ```
 
-### **obj_item_room_note**
+### **obj_item_menu_note**
 
 #### **Create**
 
