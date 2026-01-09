@@ -290,7 +290,7 @@ image_angle = random_move
 
 #### **Step**
 
-**Copy/Paste code snippet from other Step Events**
+*Copy/Paste code snippet from other Step Events*
 
 ```gml
 if !global.game_won {
@@ -328,7 +328,6 @@ if !global.game_won {
 
 #### **Step**
 
-**Copy/Paste code snippet from other Step Events**
 
 ```gml
 if array_length(global.pipe_ids) > 0 {
