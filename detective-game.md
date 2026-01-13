@@ -3,25 +3,25 @@
 1. [Project Setup](#project-setup)
 2. [Loading Game Data with Structs and Arrays](#loading-game-data-with-structs-and-arrays)
 3. [Animating with Enums](#animating-with-enums)
-4. [Dynamic, Draggable UI](#dynamic-&-draggable-ui)
+4. [Dynamic, Draggable UI](#dynamic-ui)
 5. [Super Easy Dialogue with Structs](#super-easy-dialogue-with-structs)
 6. [Next Steps](#next-steps)
  
 ## **Intro**
 
 OK here we go! This is a detective game but it's more similar in core mechanics to games like "Papers, Please" or "No, I'm Not a Human" or "That's Not My Neighbor", a lot of "Nots" in there, huh? <br /><br />
-But good gamedev means we can be inspired by these core mechanics without ripping them off, just like they all did to each other. So this game is a Detective "spot the doppelganger" game, where you have to individually interrogate the suspects.
+But good gamedev means we can be inspired by these core mechanics without ripping them off, just like they all did to each other. So this game is a Detective "spot the doppelganger" game, where you have to individually interrogate the suspects.<br /><br />
 I tried to leave a lot of room for customization. You can add new crime stories, control "guilty" or "innocent" through narrative, or get creative and combine this game and assets with the interrogation game.
 Assets are made by me and provided under CC0, they're free to use with no restrictions whatsoever. Except one, you gotta promise me you'll have fun doing gamedev.<br /><br />
 Finally, I hope this can help clear up some common pitfalls in GM, namely draggable, selectable UI. I've created a method that works for me by assigning instances depth based on a position in an array.
 Arrays are just really snappy in GameMaker. We'll also use global flags to control more UI behavior, enums for simple animation, and a combo of arrays, structs, and globals for simple, simple dialogue.<br /><br />
 This was inspired through ideas from subscribed members on Ko-Fi and Discord. Thank you so incredibly much for your continued support, you make it easier for me to keep making cool things so you can make cool things.
 And thank you in general to the GameMaker community for supporting this weird stuff.<br /><br />
-If you have questions or need help expanding this into somethinf further, feel free to reach out on Discord and we can figure it out together.<br /><br />
+If you have questions or need help expanding this into your own game, feel free to reach out on Discord and we can figure it out together.<br /><br />
 
 # **Project Setup**
 
-Open up GameMaker, give it a project name, and click start
+Open up GameMaker, give it a project name, and click **Start**
 
 ## **Rooms**
 - **Rm_Main:** 1200x800
@@ -52,10 +52,10 @@ Download:
 ### GameMaker
 
 Drag the assets into the sprites folder in GameMaker. They should automatically go into frames. <br /><br />
-
-To split these up cleanly in GameMaker, we'll duplicate sprites and delete frames so that we're left with sprites from the sprite sheet that we can cleanly place in rooms etc. To get an idea, we'll take:
+Normally, to be nice to our memory we want to group our assets into as many sprite sheets as possible, like we've done here. Ideally we would set these as objects to the correct frame and spawn them from a controller object, leaving our Rooms nice and tidy, but since this is an exercise, we'll want to break them up a little bit so they'll be easier to work with.<br /><br />
+In GameMaker, only the first frame of the sprite will show on the object in our Room. So we simply want to make a few more sprites out of these sheets. We'll duplicate sprites and delete frames so that we're left with only the frames we need. For example:
 - **spr_bg**<br /><br />
-Duplicate it, and split it into:
+Duplicate it, and split it into:<br /><br />
 - spr_bg (frame 0)
 - spr_bg_overlay (frame 1)
 
@@ -115,21 +115,21 @@ In addition, we'll need to make a few sprites in GameMaker:
 To set up our game, we'll create a couple structs. One holds meta game mechanics, like the tutorial, while the other contains all of the data for the NPCs. <br /><br />
 Since this is a "doppelganger" game where you have to find incorrect information, we'll create a struct with the following structure:
 ```text
--> 1st NPC Name
+> 1st NPC Name
 
---> Matching Clipboard Information (Innocent)
+    > Clipboard Info Matches Dialogue (Innocent)
 
---> Incorrect Clipboard Information (Guilty)
+    > Incorrect Clipboard Information (Guilty)
 
---> Matching Dialogue (Innocent)
+    > Dialogue Info Matches Clipboard (Innocent)
 
---> Incorect Dialogue (Guilty)
+    > Incorect Dialogue Information (Guilty)
 
--> 2nd NPC Name
+> 2nd NPC Name
 
---> Etc.
+    > Etc.
 ```
-And then create **parallel arrays** of our game data, randomized per run, connected with an NPC index. This gives us flexibilty over the data, the clipboard can be flipped through and dialogue according to their own indices.<br /><br />
+And then create **parallel arrays** of our game data, randomized per run, identified by an NPC index. This gives us the greatest flexibilty over the data, NPCs can be chosen for dialogue or the clipboard can be flipped through based on their own indices, but the data stays the same. <br /><br />
 But before that, let's set up our Room and initialize a few objects so we don't error.
 
 ### obj_overlay_black
@@ -448,14 +448,14 @@ for (var i = 0;i<array_length(npc_create_arr);i++) {
 	
 }
 ```
-We initialize the object instances for the NPCs (obj_body) and store the ID in the same for loop we use to create the arrays that store the guilty/innocent information, this ensures everything stays connected by index.
+We initialize the object instances for the NPCs (obj_body) and store the ID in the same **for** loop we use to create the arrays that store the guilty/innocent data. Everything runs through **i** so we know it's all loosely tied together.
 <br /><br />
 # Animating with Enums
 
 ### Explanation
 
 In this section we'll use both enums and just plain old boolean flags to control some simple animation. Since our sprite sheets contain frames for multiple characters, we'll want to control the specific frames manually.<br /><br />
-We'll use the "Farmer in the Dell" approach to building out our NPCs, starting with the eyes and finishing with the body, which is our main container object that controls eyes, mouth, and head.
+We'll use the "Farmer in the Dell" approach to building out our NPCs, or in other words we'll build out the objects like eyes and mouth first, then build the container object that holds them, obj_body, last.
 
 ### obj_eyes
 **Sprite:** spr_eyes
@@ -850,7 +850,7 @@ var order_num = npc_index + 1
 draw_text(x+draw_adjust[0],y+draw_adjust[1],string(order_num))
 ```
 <br /><br />
-# Dynamic & Draggable UI
+# Dynamic UI
 
 The general idea behind this is pretty simple, since this is a detective game we'll have a bunch of objects on the desk that serve various purposes, like a clipboard you can flip through to
 see character info or a speaker to interrogate, and a badge for some flavor text. ("Detectvie is spelled incorrectly on the badge on purpose, it's an old reference. Bonus points if you know what it's from!")<br /><br />
