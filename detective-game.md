@@ -168,7 +168,7 @@ else {
 #### Create
 
 ```gml
-depth = 14
+depth = 16
 
 Step
 
@@ -463,7 +463,7 @@ We'll use the "Farmer in the Dell" approach to building out our NPCs, or in othe
 #### Create
 
 ```gml
-depth = 11
+depth = 12
 
 image_speed = 0
 image_index = 0
@@ -505,7 +505,7 @@ else {
 #### Create
 
 ```gml
-depth = 11
+depth = 12
 
 image_speed = 0
 
