@@ -145,8 +145,6 @@ flap_timer_total = 10
 
 drop_speed = 10
 
-frame = 0
-
 enum BIRD_STATE {
 	
 	DROPPING,
