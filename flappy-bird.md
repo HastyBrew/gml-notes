@@ -121,6 +121,7 @@ if global.moving {
 		x -= move_speed	
 	}
 	else {
+		global.points += 0.5
 		instance_destroy()	
 	}
 }
