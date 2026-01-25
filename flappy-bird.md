@@ -103,14 +103,9 @@ move_speed = 10
 #### Create
 
 ```gml
-depth = 10
+depth = 7
 
-move_speed = floor(random_range(5,10))
-
-image_xscale = random_range(0.8,1.2)
-image_yscale = random_range(0.8,1.2)
-
-image_alpha = random_range(0.1,0.7)
+move_speed = 10
 ```
 
 #### Step
