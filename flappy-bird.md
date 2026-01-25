@@ -92,9 +92,14 @@ image_alpha = random_range(0.1,0.7)
 #### Step
 
 ```gml
-depth = 7
-
-move_speed = 10
+if global.moving {
+	if x > -200 {
+		x -= move_speed	
+	}
+	else {
+		instance_destroy()	
+	}
+}
 ```
 
 ### obj_pipe
