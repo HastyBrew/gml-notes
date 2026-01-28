@@ -141,9 +141,11 @@ But before that, let's set up our Room and initialize a few objects so we don't 
 image_alpha = 0
 
 fading_out = false
+```
 
-Step
+#### Step
 
+```gml
 if fading_out {
 	if image_alpha < 1 {
 		image_alpha += 0.05	
@@ -169,9 +171,11 @@ else {
 
 ```gml
 depth = 16
+```
 
-Step
+#### Step
 
+```gml
 if global.selecting_perp or global.final_decision {
 	image_blend = c_gray	
 }
