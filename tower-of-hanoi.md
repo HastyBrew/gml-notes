@@ -77,7 +77,7 @@ hitting_rod = noone
 ```gml
 if rod_num > -1 and ring_num > -1 {
 	hitting_rod = collision_rectangle(bbox_left,bbox_top,bbox_right,bbox_bottom,obj_rod,0,0)
-	can_move = (global.orders[rod_num][(array_length(global.orders[rod_num])-1)]==ring_num) ? true : false
+	can_move = (global.orders[rod_num][(array_length(global.orders[rod_num])-1)]==ring_num)
 
 }
 
