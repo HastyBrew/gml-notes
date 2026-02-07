@@ -1,5 +1,5 @@
-
-# **Navigation**
+# Make Your Own Detective Game
+## **Navigation**
 1. [Project Setup](#project-setup)
 2. [Loading Game Data with Structs and Arrays](#loading-game-data-with-structs-and-arrays)
 3. [Animating with Enums](#animating-with-enums)
