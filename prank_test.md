@@ -94,7 +94,7 @@ Drop in Rm_Main, leave for now
 ### obj_controller_end
 Drop in Rm_End, leave for now
 
-### obj_intiializer
+### obj_intializer
 Depending on your screen size you might want to change the window_scale. It makes it easy for me for testing so we'll leave that logic in.
 
 #### Create
