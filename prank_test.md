@@ -20,6 +20,7 @@ This is a prank Hand-Eye Coordination Game made for April Fool's 2026. If you kn
 1. Select a #2 Brush with Dark Blue
 2. Use the open rectangle tool to draw a border
 3. Fill the middle with Light Blue
+4. Turn on Nine-Slice
 
 ### spr_bar
 Duplicate spr_border
