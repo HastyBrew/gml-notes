@@ -489,6 +489,7 @@ draw_text_ext(_x,_y,eval_info,36,900)
 ```
 
 ### obj_border_restart
+**Sprite:** spr_border
 
 #### Create
 
