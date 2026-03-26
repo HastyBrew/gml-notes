@@ -106,7 +106,7 @@ window_scale = 2
 
 window_set_size(room_width*window_scale,room_height*window_scale)
 
-global.always_win = false
+global.can_win = false
 global.points = 0
 
 global.round = 0
@@ -187,7 +187,7 @@ image_alpha = 0
 ```gml
 if mouse_check_button_pressed(mb_left) {
 	if point_in_rectangle(mouse_x,mouse_y,bbox_left,bbox_top,bbox_right,bbox_bottom) {
-		global.always_win = true
+		global.can_win = true
 		room_goto(Rm_Main)
 	}
 	else {
@@ -349,7 +349,7 @@ if global.bar_active {
 }
 
 if global.released and !already_lost{
-	if global.always_win {
+	if global.can_win {
 		global.current_points = 100-abs(abs(cursor.x)-green.x)
 		global.bar_active = false	
 	}
@@ -416,7 +416,7 @@ title = "HAND-EYE COORDINATION TEST"
 
 final_score = round(global.points / 5)
 
-if global.always_win and final_score < 90 {
+if global.can_win and final_score < 90 {
 	final_score += 6
 }
 
