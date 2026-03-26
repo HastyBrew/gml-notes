@@ -77,7 +77,7 @@ Duplicate spr_border
 
 ## ROOMS
 
-- **Size:** 600x800
+- **Size:** 1200x800
 - **Background:** spr_bg *tile horizontally and vertically*
 
 Duplicate to Make:
