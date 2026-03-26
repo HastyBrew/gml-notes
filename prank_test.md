@@ -27,9 +27,8 @@ Duplicate spr_border
 
 - **Colors:** Dark Gray and Light Gray
 
-1. Select a #2 Brush with Dark Gray
-2. Use the open rectangle tool to draw a border
-3. Fill the middle with Light Gray
+1. Replace Dark Blue with Dark Gray
+2. Replace Light Blue with Light Gray
 
 ### spr_green
 - **Size:** 40x50
