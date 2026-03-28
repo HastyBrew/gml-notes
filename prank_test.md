@@ -71,9 +71,9 @@ Duplicate spr_border
 ### fnt_h1
 **Montserrat Black**, 45
 ### fnt_h2 
-**Montserrat Black**, 35
+**Montserrat Black**, 30
 ### fnt_p 
-**Arial Bold**, 24 
+**Arial Bold**, 15
 
 ## ROOMS
 
@@ -94,7 +94,7 @@ Drop in Rm_Main, leave for now
 ### obj_controller_end
 Drop in Rm_End, leave for now
 
-### obj_intializer
+### obj_initializer
 Depending on your screen size you might want to change the window_scale. It makes it easy for me for testing so we'll leave that logic in.
 
 #### Create
@@ -123,27 +123,25 @@ body = "This is not an official test. This test is not sanctioned by any governi
 ```gml
 draw_set_color(c_black)
 
-var _y = 200
+var _y = 100
 
-draw_set_font(fnt_h1)
+draw_set_font(fnt_h2)
 var sw = string_width(title)
 var swx = (room_width-sw)/2
 
 draw_text(swx,_y,title)
 
-_y += 200
-
-draw_set_font(fnt_h2)
+_y += 150
 
 sw = string_width(header)
 swx = (room_width-sw)/2
 
 draw_text(swx,_y,header)
 
-_y += 250
+_y += 200
 
 draw_set_font(fnt_p)
-draw_text_ext(100,_y,body,36,1000)
+draw_text_ext(50,_y,body,28,700)
 ```
 Drop into Rm_Start
 
@@ -159,14 +157,14 @@ depth = 10
 ### POSITIONS
 
 #### In Rm_Start
-1. **Position:** 50x175, **Scale:** 22x2.5
-2. **Position:** 50x625, **Scale:** 22x2.5
-3. **Position:** 300x375, **Scale:** 12x2
+1. **Position:** 25x75, **Scale:** 15x2
+2. **Position:** 150x225, **Scale:** 10x2
+3. **Position:** 25x425, **Scale:** 15x2
 
 #### In Rm_Main
 1. **Position:** 75x75, **Scale:** 6x2
 2. **Position:** 425x75, **Scale:** 6x2
-3. **Position:** 50x425, **Scale:** 14x2.5
+3. **Position:** 50x425, **Scale:** 15x2.5
 
 #### In Rm_End
 1. **Position:** 75x50, **Scale:** 13x2
@@ -263,20 +261,26 @@ else if global.current_points > 0 {
 ```gml
 draw_set_color(c_black)
 
-draw_set_font(fnt_h1)
-draw_text(670,125,round_info)
 
-draw_set_font(fnt_p)
-draw_text_ext(100,585,rules_info,36,1000)
+draw_set_font(fnt_h2)
 
-draw_set_font(fnt_h1)
-
-draw_text(150,125,score_title)
+draw_text(100,100,score_title)
 
 draw_set_color(score_color)
-var stx = 170+string_width(score_title)
+var stx = 105+string_width(score_title)
 
-draw_text(stx,125,score_info)
+draw_set_font(fnt_h1)
+draw_text(stx,86,score_info)
+
+draw_set_font(fnt_h2)
+draw_set_color(c_black)
+
+draw_set_font(fnt_h2)
+draw_text(440,100,round_info)
+
+
+draw_set_font(fnt_p)
+draw_text_ext(50,450,rules_info,28,700)
 ```
 
 ### obj_bar_green
@@ -412,41 +416,40 @@ else {
 #### Create
 
 ```gml
-title = "HAND-EYE COORDINATION TEST"
+draw_set_color(c_black)
 
-final_score = round(global.points / 5)
+var _x = 40
+var _y = 75
 
-if global.can_win and final_score < 90 {
-	final_score += 6
-}
+draw_set_font(fnt_h2)
+var sw = string_width(title)
+var swx = (room_width-sw)/2
 
-score_title = "Final Score: "
+draw_text(swx,_y,title)
 
-try_again = "Try Again"
+_y += 150
 
-if final_score > 60 {
-	score_color = c_green
-}
-else {
-	score_color = c_red	
-}
+draw_text(_x,_y,score_title)
 
-if final_score > 80 {
-	eval_text = "Excellent"
-	eval_info = "You exhibit fine motor skills on par with a small percentage of the population. People who score this high include NASCAR drivers, fighter pilots, and MOBA players."
-}
-else if final_score > 60 {
-	eval_text = "Great!"
-	eval_info = "Write your own!"
-}
-else if final_score > 50 {
-	eval_text = "Fair"
-	eval_info = "Write your own!"
-}
-else {
-	eval_text = "Poor"
-	eval_info = "Write your own!"
-}
+var stx = string_width(score_title)
+
+draw_set_font(fnt_h1)
+draw_set_color(score_color)
+draw_text(_x+stx,_y-14,string(final_score))
+
+draw_set_color(c_black)
+draw_text(_x + 450,_y-14,restart)
+
+_y += 45
+
+draw_set_color(score_color)
+draw_text(_x,_y,eval_text)
+
+_y += 150
+
+draw_set_color(c_black)
+draw_set_font(fnt_p)
+draw_text_ext(_x,_y,eval_info,36,700)
 ```
 
 #### Draw GUI
