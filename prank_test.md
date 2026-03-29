@@ -91,7 +91,7 @@ Duplicate to Make:
 ### obj_controller_main
 Drop in Rm_Main, leave for now
 
-### obj_controller_end
+### 
 Drop in Rm_End, leave for now
 
 ### obj_initializer
@@ -416,40 +416,41 @@ else {
 #### Create
 
 ```gml
-draw_set_color(c_black)
+title = "HAND-EYE COORDINATION TEST"
 
-var _x = 40
-var _y = 75
+final_score = round(global.points / 5)
 
-draw_set_font(fnt_h2)
-var sw = string_width(title)
-var swx = (room_width-sw)/2
+if global.always_win and final_score < 90 {
+	final_score += 6
+}
 
-draw_text(swx,_y,title)
+score_title = "Final Score: "
 
-_y += 150
+restart = "Restart"
 
-draw_text(_x,_y,score_title)
+if final_score > 60 {
+	score_color = c_green
+}
+else {
+	score_color = c_red	
+}
 
-var stx = string_width(score_title)
-
-draw_set_font(fnt_h1)
-draw_set_color(score_color)
-draw_text(_x+stx,_y-14,string(final_score))
-
-draw_set_color(c_black)
-draw_text(_x + 450,_y-14,restart)
-
-_y += 45
-
-draw_set_color(score_color)
-draw_text(_x,_y,eval_text)
-
-_y += 150
-
-draw_set_color(c_black)
-draw_set_font(fnt_p)
-draw_text_ext(_x,_y,eval_info,36,700)
+if final_score > 80 {
+	eval_text = "Excellent"
+	eval_info = "You exhibit fine motor skills on par with a small percentage of the population. People who score this high include NASCAR drivers, fighter pilots, and MOBA players."
+}
+else if final_score > 60 {
+	eval_text = "Great!"
+	eval_info = "You exhibit fine motor skills on par with a small percentage of the population. People who score this high include NASCAR drivers, fighter pilots, and MOBA players."
+}
+else if final_score > 50 {
+	eval_text = "Fair"
+	eval_info = "You exhibit fine motor skills on par with a small percentage of the population. People who score this high include NASCAR drivers, fighter pilots, and MOBA players."
+}
+else {
+	eval_text = "Poor"
+	eval_info = "You exhibit fine motor skills on par with a small percentage of the population. People who score this high include NASCAR drivers, fighter pilots, and MOBA players."
+}
 ```
 
 #### Draw GUI
