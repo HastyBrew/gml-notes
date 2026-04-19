@@ -14,6 +14,11 @@
 
 ## Intro
 
+For this project we'll be building a 2D Platformer using an asset kit from Craftpix. We'll be covering ALL the basics needed so you can start designing your own levels right away, from basic character movement and faking gravity to wall jumps, hit points, traps, enemies, dodging, building levels, collectibles, UI, and more! This is a pretty big project so I've tried to break it down into smaller pieces. If you have any questions you can reach out on Discord and we'll try to figure it out together, or if you want to suggest a better method for something, you can reach out through there too and I'll include it in the next video on this (which could take months). Speaking of...
+<br /><br />
+**Note:** I made this video a few months ago, I meant to reshoot it because there's a pretty big error. Since this originally came out of a much larger project, in the "Collectibles" and "UI" sections I accidentally used two sprites that aren't in the free kit, but in a paid kit only available though subscription. After much consideration I've decided to make lemonade out of it, leave those sections in (especially since a lot of people use their own assets anyways) and use my affiliate link for Craftpix, so I do receive a commission if you purchase their subscription service. I'm already a Craftpix subscriber, which is how this happened in the first place. Thank you!
+
+
 
 # Gravity
 
