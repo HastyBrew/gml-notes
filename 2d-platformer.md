@@ -1900,7 +1900,6 @@ if instance_exists(obj_player) {
 	
 }
 ```
-[ADD ANOTHER ENEMY TYPE HERE]
 
 # Dodging
 Okay, so this one's pretty simple. I saved this one for a little bit further in to show what it looks like when you add functionality down the road. It will be easy enough to add another enum case but then we'll have to look at how it interacts with our other code and just sort of clean up little edge cases. Since we build hit_grace as a global, we'll just continue to use that.
